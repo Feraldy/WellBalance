@@ -23,57 +23,57 @@ export default function Home() {
   const [name, setName] = useState('')
 
   useEffect(() => {
-    localforage.getItem('isWidgetSetting').then((boolean) => {
+    localforage.getItem<boolean>('isWidgetSetting').then((boolean) => {
       if (boolean) {
           setIsWidgetSetting(boolean);
       }
     });
-    localforage.getItem('isWalkWidget').then((boolean) => {
+    localforage.getItem<boolean>('isWalkWidget').then((boolean) => {
         if (boolean) {
             setIsWalkWidget(boolean);
         }
     });
-    localforage.getItem('isPomodoroWidget').then((boolean) => {
+    localforage.getItem<boolean>('isPomodoroWidget').then((boolean) => {
         if (boolean) {
             setIsPomodoroWidget(boolean);
         }
     });
-    localforage.getItem('isTodoWidget').then((boolean) => {
+    localforage.getItem<boolean>('isTodoWidget').then((boolean) => {
         if (boolean) {
             setIsTodoWidget(boolean);
         }
     });
-    localforage.getItem('isDrinkWidget').then((boolean) => {
+    localforage.getItem<boolean>('isDrinkWidget').then((boolean) => {
         if (boolean) {
             setIsDrinkWidget(boolean);
         }
     });
-    localforage.getItem('isNoteWidget').then((boolean) => {
+    localforage.getItem<boolean>('isNoteWidget').then((boolean) => {
         if (boolean) {
             setIsNoteWidget(boolean);
         }
     });
-    localforage.getItem('isEyeWidget').then((boolean) => {
+    localforage.getItem<boolean>('isEyeWidget').then((boolean) => {
         if (boolean) {
             setIsEyeWidget(boolean);
         }
     });
-    localforage.getItem('isWidgetSetting').then((boolean) => {
+    localforage.getItem<boolean>('isWidgetSetting').then((boolean) => {
         if (boolean) {
             setIsWidgetSetting(boolean);
         }
     });
-    localforage.getItem('walkDuration').then((boolean) => {
+    localforage.getItem<number>('walkDuration').then((boolean) => {
         if (boolean) {
             setWalkDuration(boolean);
         }
     });
-    localforage.getItem('walkInterval').then((boolean) => {
+    localforage.getItem<number>('walkInterval').then((boolean) => {
         if (boolean) {
             setWalkInterval(boolean);
         }
     });
-    localforage.getItem('name').then((savedName) => {
+    localforage.getItem<string>('name').then((savedName) => {
         if (savedName) {
           setName(savedName);
         }

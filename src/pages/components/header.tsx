@@ -14,7 +14,7 @@ const quotes = [
   ];
 
 const Header: React.FC<HeaderProps> = ({name}) => {
-    const [quote, setQuote] = useState(null);
+    const [quote, setQuote] = useState<{ content: string; author: string } | null>(null);
     const [greeting, setGreeting] = useState('');
 
     useEffect(() => {

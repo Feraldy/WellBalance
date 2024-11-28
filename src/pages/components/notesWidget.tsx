@@ -4,10 +4,10 @@ import localforage from 'localforage';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 
 const NoteWidget = () => {
-    const [note, setNote] = useState([]);
+    const [note, setNote] = useState<string>('');
 
     useEffect(() => {
-        localforage.getItem('note').then((savedNotes) => {
+        localforage.getItem<string>('note').then((savedNotes) => {
           if (savedNotes) {
             setNote(savedNotes);
           }

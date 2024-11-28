@@ -22,13 +22,13 @@ const WalkWidget: React.FC<WalkWidgetProps> = ({walkDuration, setWalkDuration, w
 
 
     useEffect(() => {
-        localforage.getItem('walkInterval').then((savedInterval) => {
+        localforage.getItem<number>('walkInterval').then((savedInterval) => {
         if (savedInterval) {
             setWalkInterval(savedInterval);
             setTimeLeft(savedInterval*60)
         }
         });
-        localforage.getItem('walkDuration').then((savedDuration) => {
+        localforage.getItem<number>('walkDuration').then((savedDuration) => {
             if (savedDuration) {
                 setWalkDuration(savedDuration);
             }

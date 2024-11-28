@@ -7,20 +7,25 @@ import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import CircleIcon from '@mui/icons-material/Circle';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
-const ToDoWidget = () => {
-    const [todos, setTodos] = useState([]);
-    const [isAdding, setIsAdding] = useState(false);
-    const [newTodo, setNewTodo] = useState('');
+interface Todo {
+    text: string;
+    completed: boolean;
+}
+
+const ToDoWidget: React.FC = () => {
+    const [todos, setTodos] = useState<Todo[]>([]);
+    const [isAdding, setIsAdding] = useState<boolean>(false);
+    const [newTodo, setNewTodo] = useState<string>('');
 
     useEffect(() => {
-        localforage.getItem('todos').then((savedTodos) => {
+        localforage.getItem<Todo[]>('todos').then((savedTodos) => {
           if (savedTodos) {
             setTodos(savedTodos);
           }
         });
       }, []);
 
-    const saveTodos = (updatedTodos) => {
+    const saveTodos = (updatedTodos: Todo[]) => {
         setTodos(updatedTodos);
         localforage.setItem('todos', updatedTodos);
     };
@@ -34,7 +39,7 @@ const ToDoWidget = () => {
         }
     };
 
-    const toggleComplete = (index) => {
+    const toggleComplete = (index:number) => {
         const updatedTodos = todos.map((todo, idx) =>
           idx === index ? { ...todo, completed: !todo.completed } : todo
         );

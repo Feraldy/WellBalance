@@ -29,73 +29,73 @@ interface WelcomePageProps{
     isWidgetSetting:boolean
     setIsWidgetSetting: (isWidgetSetting:boolean) => void
     name: string
-    setName(name:string)
+    setName: (name:string) => void
 }
 
 const welcomePage: React.FC<WelcomePageProps> = ({walkDuration, setWalkDuration, walkInterval, setWalkInterval, isWalkWidget, setIsWalkWidget, isPomodoroWidget, setIsPomodoroWidget, isTodoWidget, setIsTodoWidget, isDrinkWidget, setIsDrinkWidget,isNoteWidget, setIsNoteWidget, isEyeWidget, setIsEyeWidget, isWidgetSetting, setIsWidgetSetting, name, setName}) => {
     const [isFirstPage, setIsFirstPage] = useState<boolean | null>(true);
-    const [nameSaved, setNameSaved] = useState(false);
+    const [nameSaved, setNameSaved] = useState<boolean>(false);
     const [isWalkSettingDone, setIsWalkSettingDone] = useState<boolean | null>(false);
     const [isWalkSettingProcess, setIsWalkSettingProcess] = useState<boolean | null>(false);
 
     useEffect(() => {
-        localforage.getItem('name').then((savedName) => {
+        localforage.getItem<string>('name').then((savedName) => {
           if (savedName) {
             setName(savedName);
             setNameSaved(true)
           }
         });
-        localforage.getItem('isWalkWidget').then((boolean) => {
+        localforage.getItem<boolean>('isWalkWidget').then((boolean) => {
             if (boolean) {
                 setIsWalkWidget(boolean);
             }
         });
-        localforage.getItem('isPomodoroWidget').then((boolean) => {
+        localforage.getItem<boolean>('isPomodoroWidget').then((boolean) => {
             if (boolean) {
                 setIsPomodoroWidget(boolean);
             }
         });
-        localforage.getItem('isTodoWidget').then((boolean) => {
+        localforage.getItem<boolean>('isTodoWidget').then((boolean) => {
             if (boolean) {
                 setIsTodoWidget(boolean);
             }
         });
-        localforage.getItem('isDrinkWidget').then((boolean) => {
+        localforage.getItem<boolean>('isDrinkWidget').then((boolean) => {
             if (boolean) {
                 setIsDrinkWidget(boolean);
             }
         });
-        localforage.getItem('isNoteWidget').then((boolean) => {
+        localforage.getItem<boolean>('isNoteWidget').then((boolean) => {
             if (boolean) {
                 setIsNoteWidget(boolean);
             }
         });
-        localforage.getItem('isEyeWidget').then((boolean) => {
+        localforage.getItem<boolean>('isEyeWidget').then((boolean) => {
             if (boolean) {
                 setIsEyeWidget(boolean);
             }
         });
-        localforage.getItem('isWidgetSetting').then((boolean) => {
+        localforage.getItem<boolean>('isWidgetSetting').then((boolean) => {
             if (boolean) {
                 setIsWidgetSetting(boolean);
             }
         });
-        localforage.getItem('isWalkSettingDone').then((boolean) => {
+        localforage.getItem<boolean>('isWalkSettingDone').then((boolean) => {
             if (boolean) {
                 setIsWalkSettingDone(boolean);
             }
         });
-        localforage.getItem('walkDuration').then((boolean) => {
+        localforage.getItem<number>('walkDuration').then((boolean) => {
             if (boolean) {
                 setWalkDuration(boolean);
             }
         });
-        localforage.getItem('walkInterval').then((boolean) => {
+        localforage.getItem<number>('walkInterval').then((boolean) => {
             if (boolean) {
                 setWalkInterval(boolean);
             }
         });
-        localforage.getItem('isWalkSettingProcess').then((boolean) => {
+        localforage.getItem<boolean>('isWalkSettingProcess').then((boolean) => {
             if (boolean) {
                 setIsWalkSettingProcess(boolean);
             }
@@ -240,7 +240,7 @@ const welcomePage: React.FC<WelcomePageProps> = ({walkDuration, setWalkDuration,
                                 }} 
                                 variant="outlined"
                                 value={walkDuration}
-                                onChange={(e) => setWalkDuration(e.target.value)}
+                                onChange={(e) => setWalkDuration(parseInt(e.target.value))}
                                 fullWidth
                                 type="number"
                             />
@@ -264,7 +264,7 @@ const welcomePage: React.FC<WelcomePageProps> = ({walkDuration, setWalkDuration,
                                 }} 
                                 variant="outlined"
                                 value={walkInterval}
-                                onChange={(e) => setWalkInterval(e.target.value)}
+                                onChange={(e) => setWalkInterval(parseInt(e.target.value))}
                                 fullWidth
                                 type="number"
                             />
