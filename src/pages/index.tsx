@@ -85,7 +85,8 @@ export default function Home() {
     <Box sx={{ flexGrow: 1, p: 3, minHeight: "100vh" }} bgcolor="white">
       {isWidgetSetting !== true && ( <WelcomePage name={name} setName={setName} walkDuration={walkDuration} walkInterval={walkInterval} setWalkDuration={setWalkDuration} setWalkInterval={setWalkInterval} isWalkWidget={isWalkWidget} setIsWalkWidget={setIsWalkWidget} isDrinkWidget={isDrinkWidget} setIsDrinkWidget={setIsDrinkWidget} isEyeWidget={isEyeWidget} setIsEyeWidget={setIsEyeWidget} isNoteWidget={isNoteWidget} setIsNoteWidget={setIsNoteWidget} isPomodoroWidget={isPomodoroWidget} setIsPomodoroWidget={setIsPomodoroWidget} isTodoWidget={isTodoWidget} setIsTodoWidget={setIsTodoWidget} isWidgetSetting={isWidgetSetting} setIsWidgetSetting={setIsWidgetSetting}></WelcomePage>
       )}
-      <Stack spacing={3}>
+      {isWidgetSetting === true && (
+        <Stack spacing={3}>
         <Stack direction="row" flexGrow="1">
             <Header name={name}></Header>
         </Stack>
@@ -100,6 +101,8 @@ export default function Home() {
                 {isNoteWidget === true && (<NoteWidget/>)} 
         </Stack>
       </Stack>
+      )}
+      
     </Box>
   );
 };

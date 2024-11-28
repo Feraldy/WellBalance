@@ -154,7 +154,7 @@ const welcomePage: React.FC<WelcomePageProps> = ({walkDuration, setWalkDuration,
                 </Stack>
             </Stack>
             )}
-            {!nameSaved && (
+            {isFirstPage === false && !nameSaved && (
                 <Stack sx={{ minHeight: "100vh",pl:"6vw", justifyContent:"center"}} >
                     <Stack spacing={3}>
                         <Typography fontSize="3rem" fontWeight="200">
@@ -184,7 +184,7 @@ const welcomePage: React.FC<WelcomePageProps> = ({walkDuration, setWalkDuration,
                     </Stack>
                 </Stack>
             )}
-            {!isWidgetSetting && !isWalkSettingProcess && (
+            {!isWidgetSetting && !isWalkSettingProcess && !isFirstPage && nameSaved && (
             <Stack sx={{ minHeight: "100vh",pl:"6vw", justifyContent:"center"}} >
                 <Stack spacing={3}>
                     <Typography fontSize="3rem" fontWeight="200">
