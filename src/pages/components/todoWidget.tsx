@@ -66,7 +66,7 @@ const ToDoWidget: React.FC = () => {
             <Stack direction="row" spacing={1.5} alignItems="center">
                 <FormatListBulletedIcon sx={{ scale:1.2, p:0.6, color:"white", backgroundColor:"#212121", borderRadius:10}} ></FormatListBulletedIcon>
             </Stack>
-            <DeleteForeverIcon onClick={() => clearTodos()} sx={{ scale:1.2, p:0.6, color:"white", backgroundColor:"#212121", borderRadius:10, "&:hover": { textDecoration: "underline", cursor: "pointer" }}} ></DeleteForeverIcon>
+            <DeleteForeverIcon onClick={() => clearTodos()} sx={{ scale:1.2, p:0.6, color:"white", backgroundColor:"#212121", borderRadius:10, "&:hover": { textDecoration: "underline", cursor: "pointer", scale: "1.4" }}} ></DeleteForeverIcon>
         </Stack>
         
         {!isAdding ? (
@@ -79,7 +79,7 @@ const ToDoWidget: React.FC = () => {
                         onClick={() => toggleComplete(index)}
                         sx={{
                         textDecoration: todo.completed ? 'line-through' : 'none',
-                        cursor: 'pointer',
+                        "&:hover": { textDecoration: "line-through", cursor: "pointer" }
                         }}
                     >
                         {todo.completed? (
@@ -88,7 +88,7 @@ const ToDoWidget: React.FC = () => {
                             <RadioButtonUncheckedIcon sx={{scale: "0.5"}}></RadioButtonUncheckedIcon>
 
                         )}
-                        <ListItemText primary={todo.text} primaryTypographyProps={{fontSize: '1.5rem'}} />
+                        <ListItemText primary={todo.text} primaryTypographyProps={{fontSize: '1rem'}} />
                     </ListItem>
                     ))}
                 </List>
@@ -100,18 +100,23 @@ const ToDoWidget: React.FC = () => {
                 </Stack>
             </Stack>
           ) : (
-            <Stack spacing={2} pt="1.5rem">
-                <Typography align='left' fontSize='1.3rem'>I need to...</Typography>
+            <Stack spacing={1} pt="2rem">
+                <Typography align='left' fontSize='1.2rem'>I need to...</Typography>
                 <TextField
                     sx={{ 
                         '& .MuiInputBase-root': { 
                             border: 'none', 
-                            backgroundColor: '#212121',
-                            borderRadius: '1.15rem',
+                            backgroundColor: '#777777',
+                            borderRadius: '1.3rem',
                             color: 'white'
-                        }                       
+                        },
+                        '& .MuiOutlinedInput-notchedOutline': {
+                            border: 'none',
+                        },
+                        pb:"2rem"
                     }} 
                     variant="outlined"
+                    size='small'
                     value={newTodo}
                     onChange={(e) => setNewTodo(e.target.value)}
                 />

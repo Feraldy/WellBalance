@@ -150,7 +150,7 @@ const welcomePage: React.FC<WelcomePageProps> = ({walkDuration, setWalkDuration,
                         Hello! I'm your <strong>WFH</strong><br/>
                         assistance!
                     </Typography>
-                    <StraightIcon sx={{ scale:"2", transform: 'rotate(180deg)' }} onClick={() => goToSecondPage()}></StraightIcon>
+                    <StraightIcon sx={{ scale:"2", transform: 'rotate(180deg)', "&:hover": { textDecoration: "underline", cursor: "pointer", scale: "2.2" } }} onClick={() => goToSecondPage()}></StraightIcon>
                 </Stack>
             </Stack>
             )}
@@ -179,7 +179,7 @@ const welcomePage: React.FC<WelcomePageProps> = ({walkDuration, setWalkDuration,
                                 onChange={(e) => setName(e.target.value)}
                                 fullWidth
                             />
-                            <StraightIcon sx={{ fontSize:"3rem", transform: 'rotate(90deg)', alignSelf:"center" }} onClick={() => saveName(name)}></StraightIcon>
+                            <StraightIcon sx={{ fontSize:"3rem", transform: 'rotate(90deg)', alignSelf:"center", "&:hover": { textDecoration: "underline", cursor: "pointer", scale: "1.2" } }} onClick={() => saveName(name)}></StraightIcon>
                         </Stack>
                     </Stack>
                 </Stack>
@@ -192,26 +192,26 @@ const welcomePage: React.FC<WelcomePageProps> = ({walkDuration, setWalkDuration,
                     </Typography>
                     <Stack direction="row" alignContent="center" spacing={3}>
                         <Tooltip title="Walk Widget">
-                            <DirectionsRunIcon onClick={() => {setIsWalkWidget(!isWalkWidget); setIsWalkSettingProcess(!isWalkWidget) }} sx={{ fontSize:"7rem", p:"1.5rem", color:isWalkWidget? "white": "black" , backgroundColor:isWalkWidget?  "#212121" : "#D9D9D9", borderRadius:100,  "&:hover": { textDecoration: "underline", cursor: "pointer" }}} ></DirectionsRunIcon>
+                            <DirectionsRunIcon onClick={() => {setIsWalkWidget(!isWalkWidget); setIsWalkSettingProcess(!isWalkWidget) }} sx={{ fontSize:"7rem", p:"1.5rem", color:isWalkWidget? "white": "black" , backgroundColor:isWalkWidget?  "#212121" : "#D9D9D9", borderRadius:100,  "&:hover": { textDecoration: "underline", cursor: "pointer", scale:"1.2",color:isWalkWidget? "black": "white",backgroundColor:isWalkWidget? "#D9D9D9":"#212121" , transform:"rotateY(180deg)"  }}} ></DirectionsRunIcon>
                         </Tooltip>
                         <Tooltip title="Pomodoro Widget">
-                        <TimerIcon onClick={() => setIsPomodoroWidget(!isPomodoroWidget)} sx={{ fontSize:"7rem", p:"1.5rem", color:isPomodoroWidget? "white": "black", backgroundColor:isPomodoroWidget? "#212121" : "#D9D9D9", borderRadius:100,  "&:hover": { textDecoration: "underline", cursor: "pointer" }}} ></TimerIcon>
+                        <TimerIcon onClick={() => setIsPomodoroWidget(!isPomodoroWidget)} sx={{ fontSize:"7rem", p:"1.5rem", color:isPomodoroWidget? "white": "black", backgroundColor:isPomodoroWidget? "#212121" : "#D9D9D9", borderRadius:100,  "&:hover": { textDecoration: "underline", cursor: "pointer", scale:"1.2",color:isWalkWidget? "black": "white",backgroundColor:isWalkWidget? "#D9D9D9":"#212121" , transform:"rotateY(180deg)"   }}} ></TimerIcon>
                         </Tooltip>
                         <Tooltip title="To-Do List Widget">
-                        <FormatListBulletedIcon onClick={() => setIsTodoWidget(!isTodoWidget)} sx={{ fontSize:"7rem", p:"1.5rem", color:isTodoWidget? "white": "black", backgroundColor:isTodoWidget? "#212121" : "#D9D9D9", borderRadius:100, "&:hover": { textDecoration: "underline", cursor: "pointer" }}} ></FormatListBulletedIcon>
+                        <FormatListBulletedIcon onClick={() => setIsTodoWidget(!isTodoWidget)} sx={{ fontSize:"7rem", p:"1.5rem", color:isTodoWidget? "white": "black", backgroundColor:isTodoWidget? "#212121" : "#D9D9D9", borderRadius:100, "&:hover": { textDecoration: "underline", cursor: "pointer", scale:"1.2",color:isWalkWidget? "black": "white",backgroundColor:isWalkWidget? "#D9D9D9":"#212121" , transform:"rotateY(180deg)"   }}} ></FormatListBulletedIcon>
                         </Tooltip>
                     </Stack>
                     <Stack direction="row" alignContent="center" spacing={3}>
                         <Tooltip title="Drink Reminder Widget">
-                            <LocalDrinkIcon onClick={() => setIsDrinkWidget(!isDrinkWidget)} sx={{ fontSize:"7rem", p:"1.5rem", color:isDrinkWidget? "white": "black", backgroundColor:isDrinkWidget? "#212121" : "#D9D9D9", borderRadius:100, "&:hover": { textDecoration: "underline", cursor: "pointer" }}} ></LocalDrinkIcon>
+                            <LocalDrinkIcon onClick={() => setIsDrinkWidget(!isDrinkWidget)} sx={{ fontSize:"7rem", p:"1.5rem", color:isDrinkWidget? "white": "black", backgroundColor:isDrinkWidget? "#212121" : "#D9D9D9", borderRadius:100, "&:hover": { textDecoration: "underline", cursor: "pointer", scale:"1.2",color:isWalkWidget? "black": "white",backgroundColor:isWalkWidget? "#D9D9D9":"#212121" , transform:"rotateY(180deg)"   }}} ></LocalDrinkIcon>
                         </Tooltip>
                         <Tooltip title="Notes Widget">
-                            <EditNoteIcon onClick={() => setIsNoteWidget(!isNoteWidget)} sx={{ fontSize:"7rem", p:"1.5rem", color:isNoteWidget? "white": "black", backgroundColor:isNoteWidget? "#212121" : "#D9D9D9", borderRadius:100 , "&:hover": { textDecoration: "underline", cursor: "pointer" }}} ></EditNoteIcon>
+                            <EditNoteIcon onClick={() => setIsNoteWidget(!isNoteWidget)} sx={{ fontSize:"7rem", p:"1.5rem", color:isNoteWidget? "white": "black", backgroundColor:isNoteWidget? "#212121" : "#D9D9D9", borderRadius:100 , "&:hover": { textDecoration: "underline", cursor: "pointer", scale:"1.2",color:isWalkWidget? "black": "white",backgroundColor:isWalkWidget? "#D9D9D9":"#212121" , transform:"rotateY(180deg)"   }}} ></EditNoteIcon>
                         </Tooltip>
                         <Tooltip title="20-20-20 Widget">
-                            <RemoveRedEyeIcon onClick={() => setIsEyeWidget(!isEyeWidget)} sx={{ fontSize:"7rem", p:"1.5rem", color:isEyeWidget? "white": "black", backgroundColor:isEyeWidget? "#212121" : "#D9D9D9", borderRadius:100 , "&:hover": { textDecoration: "underline", cursor: "pointer" }}} ></RemoveRedEyeIcon>
+                            <RemoveRedEyeIcon onClick={() => setIsEyeWidget(!isEyeWidget)} sx={{ fontSize:"7rem", p:"1.5rem", color:isEyeWidget? "white": "black", backgroundColor:isEyeWidget? "#212121" : "#D9D9D9", borderRadius:100 , "&:hover": { textDecoration: "underline", cursor: "pointer", scale:"1.2",color:isWalkWidget? "black": "white",backgroundColor:isWalkWidget? "#D9D9D9":"#212121" , transform:"rotateY(180deg)"   }}} ></RemoveRedEyeIcon>
                         </Tooltip>
-                        <StraightIcon sx={{ fontSize:"3rem", transform: 'rotate(90deg)', alignSelf:"center", justifySelf: "center", "&:hover": { textDecoration: "underline", cursor: "pointer" }}} onClick={() => saveWidgetSetting()}></StraightIcon>
+                        <StraightIcon sx={{ fontSize:"3rem", transform: 'rotate(90deg)', alignSelf:"center", justifySelf: "center", "&:hover": { textDecoration: "underline", cursor: "pointer", scale:"1.2" }}} onClick={() => saveWidgetSetting()}></StraightIcon>
                     </Stack>
                 </Stack>
             </Stack>
@@ -270,7 +270,7 @@ const welcomePage: React.FC<WelcomePageProps> = ({walkDuration, setWalkDuration,
                             />
                          <Typography align="left" fontWeight="200" fontSize="2rem">minutes</Typography>
                     </Stack>
-                    <StraightIcon sx={{ fontSize:"3rem", transform: 'rotate(90deg)', alignSelf:"left" }} onClick={() => saveWalkSetting()}></StraightIcon>
+                    <StraightIcon sx={{ fontSize:"3rem", transform: 'rotate(90deg)', alignSelf:"left", "&:hover": { textDecoration: "underline", cursor: "pointer", scale: "1.2" } }} onClick={() => saveWalkSetting()}></StraightIcon>
                 </Stack>
             )}
         </Box>

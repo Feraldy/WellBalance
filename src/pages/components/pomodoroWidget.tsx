@@ -90,10 +90,15 @@ const PomodoroWidget = () => {
         <Typography fontSize="2.5rem" fontWeight="700">
           {formatTime(timeLeft)}
         </Typography>
-        <Typography align="left" fontSize="1rem" fontWeight="400" whiteSpace="break-spaces">
+        {mode==="Work" && (<Typography align="left" fontSize="1rem" fontWeight="400" whiteSpace="break-spaces">
           Minutes left until your <br/>
-          work
-        </Typography>
+          Walk
+        </Typography>)}
+        {mode==="Walk" && (<Typography align="left" fontSize="1rem" fontWeight="400" whiteSpace="break-spaces">
+          Minutes left until your <br/>
+          Work
+        </Typography>)}
+        
         {mode==="Work" && (
           <Stack onClick={() => handleTime(shortBreakCount===4 ? "Long Break" : "Short Break")} sx={{ 
             "&:hover": { 
