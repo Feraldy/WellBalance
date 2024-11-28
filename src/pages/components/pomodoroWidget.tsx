@@ -92,9 +92,9 @@ const PomodoroWidget = () => {
         </Typography>
         {mode==="Work" && (<Typography align="left" fontSize="1rem" fontWeight="400" whiteSpace="break-spaces">
           Minutes left until your <br/>
-          Walk
+          Rest
         </Typography>)}
-        {mode==="Walk" && (<Typography align="left" fontSize="1rem" fontWeight="400" whiteSpace="break-spaces">
+        {(mode==="Long Break" || mode==="Short Break") && (<Typography align="left" fontSize="1rem" fontWeight="400" whiteSpace="break-spaces">
           Minutes left until your <br/>
           Work
         </Typography>)}
