@@ -22,7 +22,7 @@ const DrinkWidget = () => {
     <Box
       sx={{
         p:5,
-        borderRadius: 2,
+        borderRadius: 7,
         boxShadow: 3,
         textAlign: 'center',
         bgcolor: '#AAE3E9',

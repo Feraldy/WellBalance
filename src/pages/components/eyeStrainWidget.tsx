@@ -45,7 +45,7 @@ const EyeStrainWidget = () => {
     <Box
       sx={{
         p:5,
-        borderRadius: 2,
+        borderRadius: 7,
         boxShadow: 3,
         textAlign: 'center',
         bgcolor: '#ABE6D1',
