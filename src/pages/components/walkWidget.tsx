@@ -74,7 +74,7 @@ const WalkWidget: React.FC<WalkWidgetProps> = ({walkDuration, setWalkDuration, w
             borderRadius: 2,
             boxShadow: 3,
             textAlign: 'center',
-            bgcolor: '#D9D9D9',
+            bgcolor: '#FFC4C4',
             color: '#212121',
             flexGrow: 1
         }}

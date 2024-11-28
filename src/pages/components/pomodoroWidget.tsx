@@ -55,7 +55,7 @@ const PomodoroWidget = () => {
         borderRadius: 2,
         boxShadow: 3,
         textAlign: 'center',
-        bgcolor: '#D9D9D9',
+        bgcolor: '#B3DDA2',
         color: '#212121',
         flexGrow: 1
       }}

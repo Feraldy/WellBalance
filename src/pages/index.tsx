@@ -91,10 +91,11 @@ export default function Home() {
             <Header name={name}></Header>
         </Stack>
         <Stack direction="row" spacing={3} alignItems="stretch" justifyContent="space-evenly" flexGrow="2">
+                {isWalkWidget === true && (<WalkWidget walkDuration={walkDuration} setWalkDuration={setWalkDuration} walkInterval={walkInterval} setWalkInterval={setWalkInterval}/>)} 
                 {isPomodoroWidget === true && (<PomodoroWidget/>)} 
                 {isEyeWidget === true && (<EyeStrainWidget />)} 
                 {isDrinkWidget === true && (<DrinkWidget />)} 
-                {isWalkWidget === true && (<WalkWidget walkDuration={walkDuration} setWalkDuration={setWalkDuration} walkInterval={walkInterval} setWalkInterval={setWalkInterval}/>)} 
+
         </Stack>
         <Stack direction="row" spacing={3} flexGrow="2">
                 {isTodoWidget === true && (<ToDoWidget/>)} 

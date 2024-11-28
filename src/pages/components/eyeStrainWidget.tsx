@@ -48,7 +48,7 @@ const EyeStrainWidget = () => {
         borderRadius: 2,
         boxShadow: 3,
         textAlign: 'center',
-        bgcolor: '#D9D9D9',
+        bgcolor: '#ABE6D1',
         color: '#212121',
         flexGrow: 1
       }}

@@ -25,7 +25,7 @@ const DrinkWidget = () => {
         borderRadius: 2,
         boxShadow: 3,
         textAlign: 'center',
-        bgcolor: '#D9D9D9',
+        bgcolor: '#AAE3E9',
         color: '#212121',
         flexGrow: 1
       }}

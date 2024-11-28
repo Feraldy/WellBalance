@@ -42,11 +42,8 @@ const Header: React.FC<HeaderProps> = ({name}) => {
     return(
         <Box
         sx={{
-            p:5,
-            borderRadius: 2,
-            boxShadow: 3,
+            p:2,
             textAlign: 'center',
-            bgcolor: '#D9D9D9',
             color: '#212121',
             flexGrow: 1
         }}
