@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({name}) => {
             <Stack direction="row" justifyContent="space-between">
             <Stack>
                 <Typography fontSize="2rem" fontWeight="200"> {greeting}, </Typography>
-                <Typography fontSize="2rem" align="left"> {name.split(' ')[0]} </Typography>
+                <Typography fontSize="2rem" align="left"> {name} </Typography>
             </Stack>
             <Stack direction="row" alignItems="center" >
                 <Stack sx={{pr:"1rem"}}>
